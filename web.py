@@ -59,11 +59,11 @@ except:
 
 
 # search file for the keyword and store results in temp
-os.system("grep -in '"+word+"' "+ifile+" >> temp")
+os.system("grep -in '"+word+"' "+ifile+" >> web_temp")
 # get line numbers from temp
 lineNumbers = []
 tc = ""
-with open('temp','r') as tfile:
+with open('web_temp','r') as tfile:
     for line in tfile:
         for c in line:
             if c == ":":
@@ -107,4 +107,4 @@ with open(ifile) as internet:
                     print "\n"
                     break
 # remove the temp file
-os.system("rm temp")
+os.system("rm web_temp")
